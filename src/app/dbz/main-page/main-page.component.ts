@@ -19,30 +19,11 @@ export class MainPageComponent {
   ];
 
   nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Maestro Roshi',
+    poder: 1000
   };
 
-  agregar() {
-    // si es un string vacío (trim para que no cuente espacios) se sale de la función
-    if (this.nuevo.nombre.trim().length === 0) {
-      return;
-    }
-    console.log(this.nuevo);
-
-    this.personajes.push(this.nuevo);
-
-    this.nuevo = {
-      nombre: '',
-      poder: 0
-    };
-
-    console.log(this.personajes);
-
-  }
-
-  cambiarNombre(event: any) {
-    console.log(event.target.value);
-
+  agregarNuevoPersonaje( personaje: Personaje) {
+    this.personajes.push( personaje );
   }
 }
