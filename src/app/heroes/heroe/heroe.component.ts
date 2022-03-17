@@ -1,33 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
-  styleUrls: ['./heroe.component.css']
+    selector: 'app-heroe',
+    templateUrl: 'heroe.component.html'
 })
-export class HeroeComponent implements OnInit {
+export class HeroeComponent{ 
 
-  nombre = 'Yasin';
-  edad = 45;
+    nombre: string = 'Ironman';
+    edad  : number = 45
 
-  constructor() { }
+    get nombreCapitalizado(): string {
+        return this.nombre.toUpperCase();
+    }
 
-  ngOnInit(): void {
-  }
+    obtenerNombre(): string {
+        return `${ this.nombre } - ${ this.edad }`;
+    }
 
-  obtenerNombre(): string {
-    return `${this.nombre} - ${this.edad}`;
-  }
+    cambiarNombre():void {
+        this.nombre = 'Spiderman';
+    }
 
-  capitalizarNombre(): string {
-    return this.nombre.toUpperCase();
-  }
+    cambiarEdad(): void {
+        console.log('hey...');
+        this.edad = 30;
+    }
 
-  cambiarNombre(): void {
-    this.nombre = 'Spiderman';    
-  }
-
-  cambiarEdad(): void {
-    this.edad = 50;
-  }
 }
